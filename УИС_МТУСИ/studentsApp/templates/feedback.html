@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Обратная связь</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <h1>Обратная связь</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <label for="message">Ваше сообщение:</label>
+        <textarea id="message" name="message" required></textarea><br>
+
+        <button type="submit">Отправить</button>
+    </form>
+    <a href="{% url 'mentor_list' %}">Вернуться к списку наставников</a>
+</body>
+</html>

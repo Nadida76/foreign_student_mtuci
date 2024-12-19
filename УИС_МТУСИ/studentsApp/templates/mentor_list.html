@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Список наставников</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static '/css/styles.css' %}">
+</head>
+<body>
+    <nav>
+        <ul class="menu">
+            <li><a href="{% url 'home' %}">Главная</a></li>
+            <li><a href="{% url 'register_mentor' %}">Регистрация Наставника</a></li>
+            <li><a href="{% url 'feedback' %}">обратную связь</a></li>
+            <li><a href="{% url 'language_skill_list' %}">Список навык</a></li>
+            <li><a href="{% url 'create_event' %}">Создать Событие</a></li>
+            <li><a href="{% url 'create_mentor' %}">Создать Наставника</a></li>
+            <li><a href="{% url 'logout' %}">Выйти</a></li>
+            <li style="margin-left: auto; color: white; background-color: #45a049;border-radius: 4px;">
+                <p>Пользователь: {% if request.user.is_authenticated %}<br>{{ request.user.username }}{% else %}Гость{% endif %}</p>
+            </li> <!-- Exibe o nome do usuário conectado -->
+        </ul>
+    </nav>
+
+    <h1>Список наставников</h1>
+    <ul class="mentor">
+        {% for mentor in mentors %}
+            <li>
+                <strong>Студент:</strong> {{ mentor.student.user.first_name }} {{ mentor.student.user.last_name }}
+                <a href="{% url 'chat' mentor.student.user.id %}">Чат</a>
+            </li>
+        {% empty %}
+            <li>Нет доступных наставников.</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ru"> <!-- Set the language of the document -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Список языковых навыков</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}"> <!-- Link to your CSS file -->
+</head>
+<body>
+    <nav>
+        <ul class="menu">
+            <li><a href="{% url 'home' %}">Главная</a></li>
+            <li><a href="{% url 'add_language_skill' %}">Добавить навык</a></li>
+            <li><a href="{% url 'feedback' %}">Обратная связь</a></li>
+            <li><a href="{% url 'logout' %}">Выйти</a></li>
+            <li style="margin-left: auto; color: white; background-color: #45a049;border-radius: 4px;">
+                <p>Пользователь: {% if request.user.is_authenticated %}<br>{{ request.user.username }}{% else %}Гость{% endif %}</p>
+            </li> <!-- Exibe o nome do usuário conectado -->
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h1>Список языковых навыков</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Родной язык</th>
+                    <th>Уровень владения</th>
+                    <th>Наличие сертификата</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for skill in language_skills %}
+                <tr>
+                    <td>{{ skill.native_language }}</td>
+                    <td>{{ skill.proficiency_level }}</td>
+                    <td>{{ skill.has_certificate|yesno:"Да,Нет" }}</td> <!-- Display Yes/No based on boolean value -->
+                </tr>
+                {% empty %}
+                <tr>
+                    <td colspan="3">Нет добавленных языковых навыков.</td> <!-- Message if no skills are found -->
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

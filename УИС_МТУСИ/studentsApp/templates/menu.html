@@ -1,0 +1,14 @@
+ <nav>
+        <ul class="menu">
+            <li><a href="{% url 'mentor_list' %}">Список Наставников</a></li>
+            <li><a href="{% url 'chat' 0 %}">Чат</a></li> <!-- Replace 0 with a valid receiver_id if needed -->
+            <li><a href="{% url 'feedback' %}">Обратная связь</a></li>
+            <li><a href="{% url 'event_list' %}">Список Событий</a></li>
+            <li><a href="{% url 'create_event' %}">Создать Событие</a></li>
+            <li><a href="{% url 'register_mentor' %}">Регистрация Наставника</a></li>
+            <li><a href="{% url 'add_language_skill' %}">Добавить Языковой Навык</a></li>
+            <li><a href="{% url 'language_skill_list' %}">Список Языковых Навыков</a></li>
+            <li><a href="{% url 'create_mentor' %}">Создать Наставника</a></li>
+            <li><a href="{% url 'update_mentor' 0 %}">Обновить Наставника</a></li> <!-- Replace 0 with a valid mentor_id if needed -->
+        </ul>
+    </nav>

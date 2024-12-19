@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Регистрация наставника</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <nav>
+        <ul class="menu">
+            <li><a href="{% url 'home' %}">Главная</a></li>
+            <li><a href="{% url 'feedback' %}">обратную связь</a></li>
+            <li><a href="{% url 'language_skill_list' %}">Список навык</a></li>
+            <li><a href="{% url 'logout' %}">Выйти</a></li>
+            <li style="margin-left: auto; color: white; background-color: #45a049;border-radius: 4px;">
+                <p>Пользователь: {% if request.user.is_authenticated %}<br>{{ request.user.username }}{% else %}Гость{% endif %}</p>
+            </li> <!-- Exibe o nome do usuário conectado -->
+        </ul>
+    </nav>
+
+    <h1>Регистрация наставника</h1>
+    <form method="POST">
+        {% csrf_token %}
+
+        <label for="username">Имя пользователя:</label>
+        <input type="text" id="username" name="username" required><br>
+
+        <label for="password">Пароль:</label>
+        <input type="password" id="password" name="password" required><br>
+
+        <label for="first_name">Имя:</label>
+        <input type="text" id="first_name" name="first_name" required><br>
+
+        <label for="last_name">Фамилия:</label>
+        <input type="text" id="last_name" name="last_name" required><br>
+
+        <label for="year_of_study">Год обучения:</label>
+        <input type="number" id="year_of_study" name="year_of_study" required><br>
+
+        <label for="major">Специальность:</label>
+        <input type="text" id="major" name="major" required><br>
+
+        <label for="nationality">Национальность:</label>
+        <input type="text" id="nationality" name="nationality" required><br>
+
+        <label for="russian_language_level">Уровень владения русским языком:</label>
+        <input type="text" id="russian_language_level" name="russian_language_level" required><br>
+
+        <button type="submit">Зарегистрироваться</button>
+    </form>
+    <a href="{% url 'mentor_list' %}">Вернуться к списку наставников</a>
+</body>
+</html>

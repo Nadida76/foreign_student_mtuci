@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Чат с {{ receiver.username }}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <div class="chat-container">
+        <h1>Чат с {{ receiver.username }}</h1>
+        <div class="messages">
+            {% for message in messages %}
+                <div class="message {% if message.sender == request.user %}sent{% else %}received{% endif %}">
+                    <p><strong>{{ message.sender.user.username }}:</strong> {{ message.content }}</p>
+                    <span class="timestamp">{{ message.timestamp }}</span>
+                </div>
+            {% endfor %}
+        </div>
+        <form method="POST" class="message-form">
+            {% csrf_token %}
+            <textarea name="content" required placeholder="Введите ваше сообщение..."></textarea><br>
+            <button type="submit">Отправить</button>
+        </form>
+        <a href="{% url 'mentor_list' %}" class="back-link">Вернуться к списку наставников</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,268 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 50px;
+    color: #333;
+}
+
+/* Form Styles */
+form {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    margin: 20px auto;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #555;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="number"], input[type="date"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    transition: border-color 0.3s;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="number"]:focus,
+input[type="date"]:focus {
+    border-color: #4CAF50;
+    outline: none;
+}
+
+/* Button Styles */
+button[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+/* Link Styles */
+a {
+    color: #4CAF50;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+a:hover {
+    color: #45a049;
+}
+
+/* Menu Styles */
+nav {
+    background-color: #4CAF50; /* Green background */
+    padding: 10px 0; /* Padding for the nav */
+}
+
+.menu {
+    list-style-type: none; /* Remove bullet points */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    display: flex; /* Use flexbox for horizontal layout */
+    justify-content: center; /* Center the menu items */
+}
+
+.menu li {
+    margin: 0 15px; /* Space between menu items */
+}
+
+.menu a {
+    color: white; /* White text color */
+    text-decoration: none; /* Remove underline */
+    font-weight: bold; /* Bold text */
+    padding: 10px 15px; /* Padding around links */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+.menu a:hover {
+    background-color: #45a049; /* Darker green on hover */
+    border-radius: 4px; /* Rounded corners on hover */
+}
+
+/* Mentor List Styles */
+.mentor {
+    list-style-type: none; /* Remove bullet points */
+    padding: 0;
+    max-width: 600px; /* Max width for the list */
+    margin: 20px auto; /* Center the list */
+    background: white; /* White background */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+}
+
+.mentor li {
+    padding: 15px;
+    border-bottom: 1px solid #ddd; /* Separator line */
+}
+
+.mentor li:last-child {
+    border-bottom: none; /* Remove the line from the last item */
+}
+
+.mentor li strong {
+    color: #4CAF50; /* Green color for bold text */
+}
+
+/* Table Styles */
+.container {
+    max-width: 800px; /* Max width for the container */
+    margin: 20px auto; /* Center the container */
+    padding: 20px; /* Padding inside the container */
+    background-color: #ffffff; /* White background */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Soft shadow */
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Table Styles */
+table {
+    width: 100%; /* Full width */
+    border-collapse: collapse; /* Remove space between cells */
+    margin-bottom: 20px; /* Space below the table */
+}
+
+th, td {
+    padding: 12px; /* Padding inside cells */
+    text-align: left; /* Align text to the left */
+    border-bottom: 1px solid #ddd; /* Bottom border for rows */
+}
+
+th {
+    background-color: #4CAF50; /* Green background for header */
+    color: white; /* White text color */
+}
+
+tr:hover {
+    background-color: #f1f1f1; /* Light gray background on hover */
+}
+
+/* Стили для сообщений */
+.chat-container {
+    max-width: 600px; /* Максимальная ширина контейнера */
+    margin: 0 auto; /* Центрирование контейнера */
+    background: white; /* Белый фон для чата */
+    border-radius: 8px; /* Закругленные углы */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Тень */
+    padding: 20px; /* Внутренние отступы */
+}
+
+.messages {
+    max-height: 400px; /* Максимальная высота области сообщений */
+    overflow-y: auto; /* Прокрутка по вертикали */
+    margin-bottom: 20px; /* Отступ снизу */
+}
+
+.messages {
+    display: flex; /* Используем flexbox для расположения сообщений */
+    flex-direction: column; /* Вертикальное расположение сообщений */
+    align-items: flex-start; /* Выравнивание сообщений по левому краю */
+    max-height: 500px; /* Максимальная высота области сообщений */
+    max-width: 100%; /* Максимальная высота области сообщений */
+    overflow-y: auto; /* Прокрутка по вертикали */
+    margin-bottom: 20px; /* Отступ снизу */
+}
+.message {
+    padding: 10px; /* Внутренние отступы для сообщений */
+    border-radius: 5px; /* Закругленные углы для сообщений */
+    margin-bottom: 10px; /* Отступ между сообщениями */
+    max-width: 80%; /* Ограничение ширины сообщений */
+    position: relative; /* Для позиционирования временной метки */
+}
+
+.message sent {
+    background-color: #b2f2b2; /* Светло-зеленый фон для отправленных сообщений */
+    align-self: flex-end; /* Выравнивание по правому краю */
+    float: right;
+}
+
+.received {
+    background-color: #f1f1f1; /* Светло-серый фон для полученных сообщений */
+    align-self: flex-start; /* Выравнивание по левому краю */
+}
+
+.timestamp {
+    font-size: 0.8em; /* Размер шрифта для временной метки */
+    color: #888; /* Серый цвет для временной метки */
+    position: relative; /* Позиционирование временной метки */
+    float:right;
+    bottom: 5px; /* Отступ снизу */
+    right: 10px; /* Отступ справа */
+}
+
+/* Стили для формы ввода */
+.message-form {
+    display: flex; /* Используем flexbox для формы */
+    flex-direction: column; /* Вертикальное расположение элементов */
+}
+
+textarea {
+    width: 100%; /* Ширина текстового поля */
+    padding: 10px; /* Внутренние отступы */
+    border: 1px solid #ccc; /* Серый бордер */
+    border-radius: 4px; /* Закругленные углы */
+    margin-bottom: 10px; /* Отступ снизу */
+    resize: none; /* Отключаем возможность изменения размера */
+}
+
+button {
+    background-color: #4CAF50; /* Зеленый фон для кнопки */
+    color: white; /* Белый текст */
+    padding: 10px; /* Внутренние отступы */
+    border: none; /* Без бордера */
+    border-radius: 4px; /* Закругленные углы */
+    cursor: pointer; /* Курсор в виде указателя */
+    transition: background-color 0.3s; /* Плавный переход цвета */
+}
+
+button:hover {
+    background-color: #45a049; /* Темнее при наведении */
+}
+
+/* Стили для ссылки возврата */
+.back-link {
+    display: block; /* Блочный элемент */
+    text-align: center; /* Центрирование текста */
+    margin-top: 20px; /* Отступ сверху */
+    color: #4CAF50; /* Зеленый цвет */
+    text-decoration: none; /* Без подчеркивания */
+}
+
+.back-link:hover {
+    text-decoration: underline; /* Подчеркивание при наведении */
+}

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Обновить наставника</title>
+</head>
+<body>
+    <h1>Обновить информацию о наставнике: {{ mentor }}</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Обновить</button>
+    </form>
+    <a href="{% url 'mentor_list' %}">Назад к списку наставников</a>
+</body>
+</html>
